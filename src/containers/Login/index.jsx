@@ -35,8 +35,15 @@ export function Login() {
       }),
       {
         pending: 'Fazendo login...',
-        success: 'Login realizado com sucesso!',
-        error: 'Erro ao realizar login!',
+        success: {
+          render(){ 
+            setTimeout(() => {
+              navigate('/') 
+            }, 2000);
+            return 'Login realizado com sucesso!';
+        },
+      },
+        error: 'E-mail ou Senha inválidos!',
       }
     )
 
